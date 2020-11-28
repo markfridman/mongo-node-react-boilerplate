@@ -1,0 +1,29 @@
+{
+  "name": "mongo-node-react-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "node --ignore client/ --ignore .git --ignore /__tests__ server.js",
+    "dev": "nodemon server.js",
+    "client": "cd client && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mark Fridman",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-list-endpoints": "^5.0.0",
+    "express-pino-logger": "^5.0.0",
+    "joi": "^17.3.0",
+    "mongoose": "^5.10.17",
+    "pino": "^6.7.0",
+    "pino-pretty": "^4.3.0"
+  }
+}
