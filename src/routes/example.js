@@ -6,12 +6,12 @@ const schema = Joi.object().keys({
 
 module.exports = async (req, res) => {
   try {
-    await schema.validateAsync()
+    await schema.validateAsync(req.body)
   } catch (err) {
-    logger.error({ err }, 'error while validating example schema')
+    req.log.error(`error while validating example schema: ${err.message}`)
     return res.status(400).json({ info: 'validation error' })
   }
-  req.log.info('sdfsdf')
   const { key } = req.body
+  req.log.info({ key },'some log')
   return res.json({ success: true })
 }
