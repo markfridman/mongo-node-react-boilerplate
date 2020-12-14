@@ -52,12 +52,6 @@ const routes = (app) => {
 
   app.use('/api', api)
 
-  //   app.all('/assets/*', (req, res) => {
-  //     res.header('Cache-Control', 'no-cache')
-  //     const assetPath = req.url.replace('/assets/', '')
-  //     request.get(`${UPLOADED_FILES_PUBLIC_URL}/${assetPath}`).pipe(res)
-  //   })
-
   app.get('*', (req, res) => {
     res.sendStatus(404)
   })
