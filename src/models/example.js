@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+const { Schema, model } = require("mongoose");
 
 const example = new Schema({
     title:  String, // String is shorthand for {type: String}
@@ -14,6 +14,6 @@ const example = new Schema({
 })
 
 
-const Examples = model('example', example, 'example')
+const Examples = model('Example', example, 'Example')
 
 module.exports = Examples
